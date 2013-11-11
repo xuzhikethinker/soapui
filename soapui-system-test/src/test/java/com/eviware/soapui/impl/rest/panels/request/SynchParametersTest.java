@@ -78,7 +78,6 @@ public class SynchParametersTest
 	public void testParameterSync() throws InterruptedException
 	{
 		FrameFixture rootWindow = frameWithTitle( "SoapUI" ).using( robot );
-		rootWindow.maximize();
 
 		createNewRestProject( rootWindow );
 

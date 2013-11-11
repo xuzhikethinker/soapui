@@ -167,9 +167,7 @@ public class SynchParametersTest
 		robot.waitForIdle();
 		int rowNumToEdit = restParamsTable.target.getRowCount() - 1;
 		editTableCell( paramName, restParamsTable, rowNumToEdit, 0 );
-		robot.waitForIdle();
 		editTableCell( paramValue, restParamsTable, rowNumToEdit, 1 );
-		robot.waitForIdle();
 	}
 
 	private void editTableCell( String paramValue, JTableFixture restParamsTable, int rowNumToEdit, int column )
@@ -177,6 +175,7 @@ public class SynchParametersTest
 		robot.waitForIdle();
 		JTextField tableCellEditor = ( JTextField )restParamsTable.cell( row( rowNumToEdit ).column( column ) ).editor();
 		new JTextComponentFixture( robot, tableCellEditor )
+				.click()
 				.enterText( paramValue )
 				.pressKey( KeyEvent.VK_ENTER );
 	}

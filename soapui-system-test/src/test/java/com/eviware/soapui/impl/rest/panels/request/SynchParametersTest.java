@@ -121,7 +121,6 @@ public class SynchParametersTest
 
 	private void closeWindow( FrameFixture rootWindow ) throws InterruptedException
 	{
-		Thread.sleep( 2000 );
 		rootWindow.close();
 
 		DialogFixture confirmationDialog = FestMatchers.dialogWithTitle( "Question" ).using( robot );
@@ -143,8 +142,10 @@ public class SynchParametersTest
 	}
 
 	private void verifyParamValues( JPanelFixture parentPanel, int rowNum, String paramName, String paramValue )
+			throws InterruptedException
 	{
 		robot.waitForIdle();
+		Thread.sleep( 500 );
 		JTableFixture paramTableInResourceEditor = parentPanel.table( REST_PARAMS_TABLE );
 		assertThat( paramTableInResourceEditor.cell( row( rowNum ).column( 0 ) ).value(), is( paramName ) );
 		assertThat( paramTableInResourceEditor.cell( row( rowNum ).column( 1 ) ).value(), is( paramValue ) );

@@ -144,6 +144,7 @@ public class SynchParametersTest
 
 	private void verifyParamValues( JPanelFixture parentPanel, int rowNum, String paramName, String paramValue )
 	{
+		robot.waitForIdle();
 		JTableFixture paramTableInResourceEditor = parentPanel.table( REST_PARAMS_TABLE );
 		assertThat( paramTableInResourceEditor.cell( row( rowNum ).column( 0 ) ).value(), is( paramName ) );
 		assertThat( paramTableInResourceEditor.cell( row( rowNum ).column( 1 ) ).value(), is( paramValue ) );
@@ -166,6 +167,7 @@ public class SynchParametersTest
 		int rowNumToEdit = restParamsTable.target.getRowCount() - 1;
 		editTableCell( paramName, restParamsTable, rowNumToEdit, 0 );
 		editTableCell( paramValue, restParamsTable, rowNumToEdit, 1 );
+		robot.waitForIdle();
 	}
 
 	private void editTableCell( String paramValue, JTableFixture restParamsTable, int rowNumToEdit, int column )

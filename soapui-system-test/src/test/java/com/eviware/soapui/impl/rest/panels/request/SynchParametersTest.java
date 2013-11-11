@@ -167,6 +167,7 @@ public class SynchParametersTest
 		robot.waitForIdle();
 		int rowNumToEdit = restParamsTable.target.getRowCount() - 1;
 		editTableCell( paramName, restParamsTable, rowNumToEdit, 0 );
+		robot.waitForIdle();
 		editTableCell( paramValue, restParamsTable, rowNumToEdit, 1 );
 		robot.waitForIdle();
 	}

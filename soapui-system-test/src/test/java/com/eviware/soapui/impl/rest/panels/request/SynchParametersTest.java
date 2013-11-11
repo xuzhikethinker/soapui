@@ -1,6 +1,7 @@
 package com.eviware.soapui.impl.rest.panels.request;
 
 import com.eviware.soapui.SoapUI;
+import com.eviware.soapui.settings.UISettings;
 import com.eviware.soapui.utils.FestMatchers;
 import org.fest.swing.core.BasicRobot;
 import org.fest.swing.core.Robot;
@@ -66,7 +67,9 @@ public class SynchParametersTest
 
 	@Before
 	public void setUp()
+
 	{
+		System.setProperty( "soapui.jxbrowser.disable", "true" );
 		application( SoapUI.class ).start();
 		robot = BasicRobot.robotWithCurrentAwtHierarchy();
 	}

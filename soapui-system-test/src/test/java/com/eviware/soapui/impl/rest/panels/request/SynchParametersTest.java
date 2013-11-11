@@ -9,10 +9,7 @@ import org.fest.swing.edt.FailOnThreadViolationRepaintManager;
 import org.fest.swing.fixture.*;
 import org.fest.swing.security.ExitCallHook;
 import org.fest.swing.security.NoExitSecurityManagerInstaller;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
@@ -74,6 +71,7 @@ public class SynchParametersTest
 		robot = BasicRobot.robotWithCurrentAwtHierarchy();
 	}
 
+	@Ignore
 	@Test
 	public void testParameterSync() throws InterruptedException
 	{
